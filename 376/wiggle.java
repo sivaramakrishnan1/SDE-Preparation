@@ -1,3 +1,4 @@
+
 /**
  * wiggle wiggle
  */
@@ -11,40 +12,49 @@ public class wiggle {
         Scanner s = new Scanner(System.in);
 
         // problem initialization
-        int arr[] = new int[]{1,17,5,10,13,15,10,5,16,8};
+        int arr[] = new int[] { 3, 3, 3, 2, 5 };
         System.out.println(doWiggle(arr));
-        
+
         s.close();
     }
 
     public static int doWiggle(int ar[]) {
 
-        if( ar.length <= 2) { return ar.length;}
+        if (ar.length <= 1)
+            return ar.length;
 
-        int count = 1, front=0,back=1;
+        int count = 1, front = 0, back = 1;
+        boolean vary = true;
 
-        while(back < ar.length)
-        {
-            if(ar[back] > ar[front] && (back%2!=0))
+        while (back < ar.length) {
+            if( count == 1 && ( ar[back] != ar[front]) )
             {
+                vary = (ar[back] > ar[front]);
+            }
+            if (ar[back] > ar[front] && vary) {
                 back++;
                 front++;
                 count++;
-            }
-            else if(ar[back] <= ar[front] && (back%2!=0)){
+                vary = !vary;
+            } else if (ar[back] <= ar[front] && vary) {
                 back++;
+                front++;
             }
 
-            else if(ar[back] > ar[front] && (back%2==0))
-            {
+            else if (ar[back] < ar[front] && !vary) {
+                back++;
+                front++;
                 count++;
-            }
-            else{
+                vary = !vary;
+
+            } else {
+                front++;
                 back++;
             }
-            if( back == ar.length) break;
+            if (back == ar.length)
+                break;
         }
-        
+
         return count;
     }
 }
