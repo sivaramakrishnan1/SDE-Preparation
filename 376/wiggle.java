@@ -19,9 +19,7 @@ public class wiggle {
     }
 
     public static int doWiggle(int ar[]) {
-
-        if (ar.length <= 1)
-            return ar.length;
+        if (ar.length <= 1) return ar.length; 
 
         int count = 1, front = 0, back = 1;
         boolean vary = true;
@@ -31,30 +29,32 @@ public class wiggle {
             {
                 vary = (ar[back] > ar[front]);
             }
-            if (ar[back] > ar[front] && vary) {
+            if (ar[back] > ar[front] && vary) 
+            {
                 back++;
                 front++;
                 count++;
                 vary = !vary;
-            } else if (ar[back] <= ar[front] && vary) {
+            } 
+            else if (ar[back] <= ar[front] && vary) 
+            {
                 back++;
                 front++;
             }
-
-            else if (ar[back] < ar[front] && !vary) {
+            else if (ar[back] < ar[front] && !vary) 
+            {
                 back++;
                 front++;
                 count++;
                 vary = !vary;
-
-            } else {
+            } 
+            else 
+            {
                 front++;
                 back++;
             }
-            if (back == ar.length)
-                break;
+            if (back == ar.length) break;
         }
-
         return count;
     }
 }
