@@ -2,8 +2,6 @@ public class miso {
     public static void main(String[] args) {
        String[] list1 = {"KFC","Shogun","Tapioca Express","Burger King","KFC"} , list2 = {"KFC","Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
        miso misso = new miso();
-
-       
        System.out.println(misso.findMISO(list1 , list2));
     }
 
