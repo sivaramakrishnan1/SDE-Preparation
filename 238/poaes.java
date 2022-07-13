@@ -13,6 +13,8 @@ public class poaes {
 
     public int[] productExceptSelf(int[] nums) 
     {
+        /*
+        *Silly me
         int product = 1, digitCount = 0; boolean zeroPresence = false;
         
         for(int i=0 ; i<nums.length ; i++)
@@ -42,5 +44,31 @@ public class poaes {
             }
             
         return answer;
+        */
+        int val = 1;
+        int zero = 0;
+        
+        for(int i : nums) 
+            if(i != 0) val *= i;
+            else zero++;
+        
+        if(zero == 0)
+            for(int i = 0 ; i < nums.length ; i++)
+            {
+                nums[i] = val / nums[i];
+            }
+        else if(zero == 1)
+            for(int i = 0 ; i < nums.length ; i++)
+            {
+                if(nums[i] == 0) nums[i] = val;
+                else nums[i] = 0;
+            }
+        else
+            for(int i = 0 ; i < nums.length ; i++)
+            {
+                nums[i] = 0;
+            }
+        return nums;
+        
     }
 }
