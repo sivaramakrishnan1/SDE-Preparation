@@ -18,7 +18,7 @@ public class BuySellStock {
 
     public int findDate(int arr[])
     {
-        /* 
+        // !this works but not for 1000 values arr. takes long time
         int big = 0;
         for(int i=0 ; i<arr.length ; i++)
         {
@@ -31,8 +31,8 @@ public class BuySellStock {
             }
         }
         return big;
-         */
-
+    
+        /*
         int small = 0;
 
         for (int i = 1; i < arr.length; i++) {
@@ -45,6 +45,6 @@ public class BuySellStock {
         for (int i = small; i < arr.length; i++) {
             if(arr[i] > arr[big]) big = i;
         }
-        return (arr[big] - arr[small]);
+        return (arr[big] - arr[small]); */
     }
 }
