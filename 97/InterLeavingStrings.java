@@ -17,7 +17,7 @@ public class InterLeavingStrings {
     {
         
         if (s3.length() != s1.length() + s2.length()) return false;
-        int l1 = 0 , l2 = 0 ;
+        // int l1 = 0 , l2 = 0 ;
         /*
         for (int i = 0; i < s3.length(); i++) 
         {
