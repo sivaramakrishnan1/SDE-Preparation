@@ -23,7 +23,6 @@ public class s3p4 {
             if(count == s2.length()) return startPos;
             if(i == s1.length()-1 && count != s2.length()) return -1;             
         }
-
         return startPos;
     }
 }
