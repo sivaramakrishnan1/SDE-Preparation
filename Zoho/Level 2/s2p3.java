@@ -12,7 +12,7 @@ public class s2p3 {
 
     public void printPoosibilities(int limit)
     {
-        List list = new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
 
         list.add("3");
         list.add("4");
@@ -26,7 +26,7 @@ public class s2p3 {
             s = "4" + (String) list.get(index++);
             list.add(s);
         }
-        for(Object one : list)
+        for(String one : list)
             System.out.println(one);
         // ! Prints everything
         // System.out.println(list);
