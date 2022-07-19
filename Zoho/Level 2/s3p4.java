@@ -2,7 +2,7 @@ public class s3p4 {
     public static void main(String[] args) {
         s3p4 obj = new s3p4();
 
-        String str1 = "test123string" , str2 = "123";
+        String str1 = "testing12" , str2 = "1234";
         System.out.println(obj.findBeginning(str1 , str2));
     }
 
@@ -20,7 +20,8 @@ public class s3p4 {
                 count = 0;
                 startPos = -1;
             }
-            if(count == s2.length()) return startPos;                
+            if(count == s2.length()) return startPos;
+            if(i == s1.length()-1 && count != s2.length()) return -1;             
         }
 
         return startPos;
