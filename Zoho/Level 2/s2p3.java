@@ -8,6 +8,8 @@ public class s2p3 {
 
         int limit = s.nextInt();
         obj.printPoosibilities(limit);
+
+        s.close();
     }
 
     public void printPoosibilities(int limit)

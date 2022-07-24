@@ -8,7 +8,6 @@ public class s1p1 {
     public void printPattern()
     {
         String txt = "PROGRAM";
-        int chumma=0;
 
         for(int i=0 ; i<txt.length() ; i++)
         {
