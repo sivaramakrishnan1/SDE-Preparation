@@ -3,7 +3,6 @@
 
 Hi! This is my repository containing all my codes during the preparation of getting software developer job. I done few leetcode problems and some interview questions asked in [Zoho](https://www.zoho.com/)
 
-```git
 ## Blueprint of this repository
 1. [Leet Code](/Leet%20Code/)
     1. Folder name : LeetCode problem number
@@ -26,5 +25,3 @@ Hi! This is my repository containing all my codes during the preparation of gett
         * A [`txt file`](/PatternProblems/Numerical_Patterns/Numerical-Pattern-Intro.txt) explaining all the patterns and the program file's name to generate that pattern is mentioned.
     2. Star Patterns
         * A [`txt file`](/PatternProblems/Star_Pattern/Star-Pattern-Intro.txt) explaining all the patterns and the program file's name to generate that pattern is mentioned. 
-
-```
