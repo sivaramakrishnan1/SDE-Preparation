@@ -1,0 +1,19 @@
+public class problem14 {
+    public static void main(String[] args) {
+        
+        int val = 5;
+
+        for(int i = 1 ; i <= val ; i++)
+        {
+            for(int j = 0 ; j < i ; j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j = 1 ; j <= val - i + 1 ; j++)
+            {
+                System.out.print(val - i + 1 + " ");
+            }
+            System.out.println();
+        }
+    }
+}

@@ -127,3 +127,57 @@ This folder files contains the pattern problems from the site
           *
 
 14. Pant 
+***** *****
+****   ****
+***     ***
+**       **
+*         *
+
+15. Inverted Pant
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+16. Half Sand Clock
+* * * * * 
+* * * *
+* * *
+* *
+*
+* *
+* * *
+* * * *
+* * * * *
+
+17. X
+*       * 
+  *   *
+    *
+  *   *
+*       *
+
+18. Hollow Half Pyramid
+*
+* *       
+*   *
+*     *
+* * * * *
+
+19. Hollow Square
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * *
+
+20. butterfly
+*           * 
+* *       * *
+* * *   * * *
+* * * * * * *
+* * *   * * *
+* *       * *
+*           *
+
