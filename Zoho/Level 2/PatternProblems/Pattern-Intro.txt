@@ -100,6 +100,19 @@ This folder files contains the pattern problems from the site
         *   *
           *
 
+12. Hollow diamond
+          *
+        *   *
+      *       *
+    *           *
+  *               *
+*                   *
+  *               *     
+    *           *
+      *       *
+        *   *
+          *
+
 13. Left half of diamond
           * 
         * *
@@ -112,3 +125,5 @@ This folder files contains the pattern problems from the site
       * * *
         * *
           *
+
+14. Pant 

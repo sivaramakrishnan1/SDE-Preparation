@@ -1,4 +1,3 @@
-import javax.xml.transform.Source;
 
 public class HalfDiamond {
     public static void main(String[] args) {
