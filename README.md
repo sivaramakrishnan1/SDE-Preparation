@@ -22,6 +22,6 @@ Hi! This is my repository containing all my codes during the preparation of gett
 
 3. [Patterns](/PatternProblems/)
     1. Numerical Patterns
-        * A [`txt file`](/PatternProblems/Numerical_Patterns/Numerical-Pattern-Intro.txt) explaining all the patterns and the program file's name to generate that pattern is mentioned.
+        * A [`.md file`](/PatternProblems/Numerical_Patterns/ReadMe-NemericalPatterns.md) explaining all the patterns and the program file's name to generate that pattern is mentioned.
     2. Star Patterns
-        * A [`txt file`](/PatternProblems/Star_Pattern/Star-Pattern-Intro.txt) explaining all the patterns and the program file's name to generate that pattern is mentioned. 
+        * A [`.md file`](/PatternProblems/Star_Pattern/ReadMe-StarPatterns.md) explaining all the patterns and the program file's name to generate that pattern is mentioned. 
