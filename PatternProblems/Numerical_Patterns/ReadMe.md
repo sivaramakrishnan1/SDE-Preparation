@@ -124,3 +124,13 @@ This files in this folder contains the pattern problem solutions from the [site]
  4 4 4 4
 5 5 5 5 5
 ```
+
+14. problem 14
+```
+1
+11
+21
+1211
+111221
+312211
+```

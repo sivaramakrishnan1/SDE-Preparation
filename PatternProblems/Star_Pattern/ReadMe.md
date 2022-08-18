@@ -222,3 +222,11 @@ This files in this folder contains the pattern problem solutions from the [site]
 *           *
 ```
 
+21. X0X pattern (n = 6 , m = 7)
+X X X X X X
+X 0 0 0 0 X
+X 0 X X 0 X
+X 0 X X 0 X
+X 0 X X 0 X
+X 0 0 0 0 X
+X X X X X X
