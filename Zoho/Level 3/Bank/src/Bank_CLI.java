@@ -6,15 +6,15 @@ public class Bank_CLI {
 		AdminLogIn admin = new AdminLogIn();
 		int choice = 0;
 		Scanner s = new Scanner(System.in);
-		while (true) {
-			System.out.println();
-			System.out.println("\t\t***********");
-			System.out.println("\t\t* B A N K *");
-			System.out.println("\t\t***********");
-			System.out.println();
+		boolean loop = true;		
 
-			System.out.println("\t\t1. Account holder Login "
-					+ "\n\t\t2. Admin Login ");
+		while (loop) {			
+			printsBank();
+
+			System.out.print("\n\n\t\t1. Account holder Login "
+					+ "\n\t\t2. Admin Login "
+					+ "\n\t\t3. Exit"
+					+ "\n\n\t\tEnter your choice : ");
 
 			choice = s.nextInt();
 
@@ -24,14 +24,28 @@ public class Bank_CLI {
 					break;
 				}
 				case 2: {
-					System.out.println("Withdraws");
+					admin.AdminLogInPage();
+					break;
+				}
+				case 3: {
+					loop = false;
+					break;
 				}
 				default: {
+					System.out.println("\t\tNot an option from the list. \n\t\tPlease try again.");
 					break;
 				}
 			}
-
 		}
 	}
 
+	/**
+	 * Prints the banner
+	 * @return void
+	 */
+	public static void printsBank() {
+		System.out.print("\n\t\t***************************");
+		System.out.print("\n\t\t** B E T T E R   B A N K **");
+		System.out.print("\n\t\t***************************");
+	}
 }
