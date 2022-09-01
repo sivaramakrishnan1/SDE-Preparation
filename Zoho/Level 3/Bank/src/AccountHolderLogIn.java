@@ -2,26 +2,25 @@ import java.util.Scanner;
 
 public class AccountHolderLogIn {
 
-	Account accounts[] = new Account[100];
+	static Account accounts[] = new Account[100];
 	Scanner s = new Scanner(System.in);
 
 	/**
 	 * Log-in page for account holder
 	 */
 	public void userLogIn() {
-		initialize();
 		int accountNumber = 0;
 		String password = "";
 		boolean loop = true;
 
 		while (loop) {
 			printsBank();
-			
 
 			System.out.print("\nEnter Account number : (Enter 0 to exit)");
 			accountNumber = s.nextInt();
 
-			if(accountNumber == 0) break;
+			if (accountNumber == 0)
+				break;
 
 			System.out.print("\nEnter Password : ");
 			password = s.next();
@@ -30,7 +29,8 @@ public class AccountHolderLogIn {
 			int id = findAccount(accountNumber);
 
 			if (id == -1) {
-				System.out.print("\nThe account number you entered doesn't exist.\n Please check your account number\n");
+				System.out
+						.print("\nThe account number you entered doesn't exist.\n Please check your account number\n");
 			} else {
 				if (accounts[id].checkPassword(password)) {
 					loggedIn(id);
@@ -42,7 +42,7 @@ public class AccountHolderLogIn {
 			}
 		}
 	}
-	
+
 	/**
 	 * Home page of Account holder after log in
 	 * 
@@ -82,8 +82,10 @@ public class AccountHolderLogIn {
 					System.out.print("\nEnter your password : ");
 					String password = encryptPassword(s.next());
 
-					if (accounts[id].checkPassword(password)) transfer(id, id2);
-					else System.out.print("\nPassword mismatch ");
+					if (accounts[id].checkPassword(password))
+						transfer(id, id2);
+					else
+						System.out.print("\nPassword mismatch ");
 					break;
 				}
 
@@ -99,15 +101,14 @@ public class AccountHolderLogIn {
 	}
 
 	/**
-	 * Initializes two accounts to work and test. 
-	 * ! Soon to be removed. 
+	 * Initializes two accounts to work and test.
+	 * ! Soon to be removed.
 	 */
-	public void initialize()
-	{
-		accounts[0] = new Account(0, 123, "Siva", 5000 ,encryptPassword("siva") );
-		accounts[1] = new Account(1, 124, "ram", 5000 ,encryptPassword("ram") );
+	public void initialize() {
+		accounts[0] = new Account(0, 123, "Siva", 5000, encryptPassword("siva"));
+		accounts[1] = new Account(1, 124, "ram", 5000, encryptPassword("ram"));
 	}
-	
+
 	/**
 	 * Prints the banner
 	 */
@@ -142,12 +143,12 @@ public class AccountHolderLogIn {
 		String pass = "";
 
 		for (char p : password.toCharArray()) {
-			if ((int) p == 57)
-				pass += (char) 48;
-			else if ((int) p == 90)
-				pass += (char) 65;
-			else if ((int) p == 122)
-				pass += (char) 97;
+			if ((int) p == 57) // 57 = 9
+				pass += (char) 48; // 48 = 0
+			else if ((int) p == 90) // 90 = Z
+				pass += (char) 65; // 65 = A
+			else if ((int) p == 122) // 122 = z
+				pass += (char) 97; // 97 = a
 			else
 				pass += (char) (p + 1);
 		}
@@ -155,7 +156,8 @@ public class AccountHolderLogIn {
 	}
 
 	/**
-	 * Reduces amount from the account's balance. 
+	 * Reduces amount from the account's balance.
+	 * 
 	 * @param id
 	 */
 	public void withdraw(int id) {
@@ -169,7 +171,9 @@ public class AccountHolderLogIn {
 	}
 
 	/**
-	 * The Id of the sender and the recipient is enough. This function will get the amount to be transferred and changes that amount. 
+	 * The Id of the sender and the recipient is enough. This function will get the
+	 * amount to be transferred and changes that amount.
+	 * 
 	 * @param sender
 	 * @param receiver
 	 */
@@ -182,5 +186,30 @@ public class AccountHolderLogIn {
 			accounts[sender].withdraw(cashToTransfer);
 		System.out.print("/nRs. " + accounts[receiver].addAmount(cashToTransfer)
 				+ " has been transfered to " + accounts[receiver].getName() + " from your account");
+	}
+
+	void addAccount(int limit, int accountNumber, String name, int balance, String password) {
+		accounts[limit] = new Account(limit, accountNumber, name, balance, password);
+	}
+
+	boolean removeAccount() {
+		System.out.print("\nEnter the account number to remove it : ");
+		int accountNumber = s.nextInt();
+
+		int id = findAccount(accountNumber);
+		if (id == -1) {
+			System.out.println("Account does no exist");
+			return false;
+		}
+		AccountHolderLogIn.accounts[id].removeAccount();
+		return true;
+	}
+
+	void upSyncAccount(Account[] newAccounts) {
+		AccountHolderLogIn.accounts = newAccounts;
+	}
+
+	Account[] downSyncAccount() {
+		return AccountHolderLogIn.accounts;
 	}
 }

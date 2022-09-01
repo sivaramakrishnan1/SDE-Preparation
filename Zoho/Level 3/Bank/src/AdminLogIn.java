@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
-public class AdminLogIn extends AccountHolderLogIn {
-    int limit = 0;
+public class AdminLogIn {
+    int limit = 2;
     Account admins[] = new Account[20];
     Scanner s = new Scanner(System.in);
     AccountHolderLogIn user = new AccountHolderLogIn();
+
     /**
      * Admin Log in page. This function asks the login credentials of an admin. 
      */
@@ -47,7 +48,8 @@ public class AdminLogIn extends AccountHolderLogIn {
             System.out.print("\n\t\t 1. Add account" + 
             "\n\t\t 2. Remove Account" +
             "\n\t\t 3. Change Password for an account" + 
-            "\n\t\t 4. Exit");
+            "\n\t\t 4. View Accounts" +
+            "\n\t\t 5. Exit");
 
             System.out.print("\nEnter your choice : ");
             choice = s.nextInt();
@@ -59,7 +61,7 @@ public class AdminLogIn extends AccountHolderLogIn {
                 }
                 case 2:
                 {
-                    removeAccount();
+                    removeAccountUser();
                     break;
                 }
                 case 3: 
@@ -67,7 +69,12 @@ public class AdminLogIn extends AccountHolderLogIn {
                     changePassword();
                     break;
                 }
-                case 4:
+                case 4: 
+                {
+                    viewAccounts();
+                    break;
+                }
+                case 5:
                 {
                     choice = 0;
                     break;
@@ -120,6 +127,7 @@ public class AdminLogIn extends AccountHolderLogIn {
 
     void addAccount()
     {
+        user.accounts = user.downSyncAccount();
         System.out.print("\nAccount number : ");
         int accountNumber = s.nextInt();
 
@@ -141,21 +149,21 @@ public class AdminLogIn extends AccountHolderLogIn {
 
         System.out.print("\nCurrent Balance : ");
         int balance = s.nextInt();
-
-        accounts[limit] = new Account(limit++, accountNumber, name, balance, password);
+        System.out.println("\nNew Account with details");
+        System.out.println("Name : " + name + "\n Account number : " + accountNumber + "\nBalance : " + balance + "\nPassword : " + password);
+        user.addAccount(limit, accountNumber, name, balance, password);
+        user.upSyncAccount(user.accounts);
+        limit++;
     }
 
-    void removeAccount()
+    void removeAccountUser()
     {
-        System.out.print("\nEnter the account number to remove it : ");
-        int accountNumber = s.nextInt();
-
-        int id = findAccount(accountNumber);
-
-        boolean result = accounts[id].removeAccount();
+        boolean result = user.removeAccount();
 
         if(result) System.out.print("\nAccount removed successfully! ");
         else System.out.print("\nAccount is not removed.");
+
+        user.upSyncAccount(user.accounts);
     }
 
     void changePassword() 
@@ -164,12 +172,19 @@ public class AdminLogIn extends AccountHolderLogIn {
         int id = user.findAccount(s.nextInt());
 
         System.out.print("\nEnter the new password : ");
-        changePassword(s.next(), id);
 
+        user.accounts[id].changePassword(encryptPassword(user.encryptPassword(s.next())));
+        user.upSyncAccount(user.accounts);
     }
 
-    public void changePassword(String newPassword, int id)
-	{
-		accounts[id].changePassword(encryptPassword(newPassword));
-	}
+    void viewAccounts()
+    {
+        System.out.println("Id\t\tName\t\tAccount no.\tBalance");
+        Account accounts[] = user.downSyncAccount();
+
+        for (int i = 0; accounts[i] != null; i++) {
+            System.out.println(accounts[i].getId() + "\t\t" + accounts[i].getName() + "\t\t" + accounts[i].getAccountNumber() + "\t\t" + accounts[i].getBalance());
+
+        }
+    }
 }

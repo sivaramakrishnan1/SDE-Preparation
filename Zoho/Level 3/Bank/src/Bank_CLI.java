@@ -8,6 +8,9 @@ public class Bank_CLI {
 		Scanner s = new Scanner(System.in);
 		boolean loop = true;		
 
+		user.initialize();
+		user.upSyncAccount(user.accounts);
+		
 		while (loop) {			
 			printsBank();
 

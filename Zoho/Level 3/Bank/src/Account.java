@@ -79,7 +79,7 @@ public class Account {
 
         if(this.balance != 0)
         {
-            System.out.println("\t\tThis account still have some fund in it. \n\t\tDo you want to delete it for sure ? (y\n)");
+            System.out.println("\t\tThis account still have some fund in it. \n\t\tDo you want to delete it for sure ? (y/n)");
             String response = s.next();
             if(response.equals("y"))
             {
@@ -102,5 +102,4 @@ public class Account {
         
         return true;
     }
-    
 }
