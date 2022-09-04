@@ -134,3 +134,10 @@ This files in this folder contains the pattern problem solutions from the [site]
 111221
 312211
 ```
+
+15. problem 15
+3 3 3 3 3
+3 2 2 2 3
+3 2 1 2 3
+3 2 2 2 3
+3 3 3 3 3
