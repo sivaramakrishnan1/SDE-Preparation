@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * 
+ * @author @sivaramakrishnan1
+ *
+ */
 public class Bank_CLI {
 	public static void main(String args[]) {
 		AccountHolderLogIn user = new AccountHolderLogIn();
@@ -9,7 +14,7 @@ public class Bank_CLI {
 		boolean loop = true;		
 
 		user.initialize();
-		user.upSyncAccount(user.accounts);
+		user.upSyncAccount(AccountHolderLogIn.accounts);
 		
 		while (loop) {			
 			printsBank();

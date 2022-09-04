@@ -125,9 +125,13 @@ public class AdminLogIn {
 		return pass;
 	}
 
+    /**
+     * Account will be added to the DataBase. Requirements are created in this function itself. 
+     * 
+     */
     void addAccount()
     {
-        user.accounts = user.downSyncAccount();
+        AccountHolderLogIn.accounts = user.downSyncAccount();
         System.out.print("\nAccount number : ");
         int accountNumber = s.nextInt();
 
@@ -152,7 +156,7 @@ public class AdminLogIn {
         System.out.println("\nNew Account with details");
         System.out.println("Name : " + name + "\n Account number : " + accountNumber + "\nBalance : " + balance + "\nPassword : " + password);
         user.addAccount(limit, accountNumber, name, balance, password);
-        user.upSyncAccount(user.accounts);
+        user.upSyncAccount(AccountHolderLogIn.accounts);
         limit++;
     }
 
@@ -163,7 +167,7 @@ public class AdminLogIn {
         if(result) System.out.print("\nAccount removed successfully! ");
         else System.out.print("\nAccount is not removed.");
 
-        user.upSyncAccount(user.accounts);
+        user.upSyncAccount(AccountHolderLogIn.accounts);
     }
 
     void changePassword() 
@@ -173,8 +177,8 @@ public class AdminLogIn {
 
         System.out.print("\nEnter the new password : ");
 
-        user.accounts[id].changePassword(encryptPassword(user.encryptPassword(s.next())));
-        user.upSyncAccount(user.accounts);
+        AccountHolderLogIn.accounts[id].changePassword(encryptPassword(user.encryptPassword(s.next())));
+        user.upSyncAccount(AccountHolderLogIn.accounts);
     }
 
     void viewAccounts()

@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class AccountHolderLogIn {
-
 	static Account accounts[] = new Account[100];
 	Scanner s = new Scanner(System.in);
 
@@ -29,8 +28,7 @@ public class AccountHolderLogIn {
 			int id = findAccount(accountNumber);
 
 			if (id == -1) {
-				System.out
-						.print("\nThe account number you entered doesn't exist.\n Please check your account number\n");
+				System.out.print("\nThe account number you entered doesn't exist.\n Please check your account number\n");
 			} else {
 				if (accounts[id].checkPassword(password)) {
 					loggedIn(id);
@@ -54,12 +52,11 @@ public class AccountHolderLogIn {
 		printsBank();
 
 		while (loop) {
-			System.out.print("\n============================================================");
 			System.out.print("\nHello " + accounts[id].getName());
 			System.out.print("\n1. Balance Check \n" +
 					"2. Cash Withdraw \n" +
 					"3. Cash Transfer \n" +
-					"4. Exit" +
+					"4. Exit \n" +
 					"Your choice : ");
 
 			choice = s.nextInt();
@@ -178,13 +175,13 @@ public class AccountHolderLogIn {
 	 * @param receiver
 	 */
 	public void transfer(int sender, int receiver) {
-		System.out.print("/nEnter the ammount to Transfer : ");
+		System.out.print("\nEnter the ammount to Transfer : ");
 		int cashToTransfer = s.nextInt();
 		if (cashToTransfer > accounts[sender].getBalance())
-			System.out.print("/nNot enough fund to withdraw");
+			System.out.print("\nNot enough fund to transfer");
 		else
 			accounts[sender].withdraw(cashToTransfer);
-		System.out.print("/nRs. " + accounts[receiver].addAmount(cashToTransfer)
+		System.out.print("\nRs. " + accounts[receiver].addAmount(cashToTransfer)
 				+ " has been transfered to " + accounts[receiver].getName() + " from your account");
 	}
 
