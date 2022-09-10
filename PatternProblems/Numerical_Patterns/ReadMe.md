@@ -98,6 +98,7 @@ This files in this folder contains the pattern problem solutions from the [site]
  7777777
 999999999
 ```
+
 11. problem11
 ```
     1
@@ -136,8 +137,10 @@ This files in this folder contains the pattern problem solutions from the [site]
 ```
 
 15. problem 15
+```
 3 3 3 3 3
 3 2 2 2 3
 3 2 1 2 3
 3 2 2 2 3
 3 3 3 3 3
+```
