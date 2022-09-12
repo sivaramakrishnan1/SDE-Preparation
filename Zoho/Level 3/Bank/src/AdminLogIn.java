@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class AdminLogIn {
+public class AdminLogIn extends AccountHolderLogIn {
     int limit = 2;
     Account admins[] = new Account[20];
     Scanner s = new Scanner(System.in);
