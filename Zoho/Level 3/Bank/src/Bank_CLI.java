@@ -14,7 +14,7 @@ public class Bank_CLI {
 		boolean loop = true;		
 
 		user.initialize();
-		user.upSyncAccount(AccountHolderLogIn.accounts);
+		// user.upSyncAccount(AccountHolderLogIn.accounts);
 		
 		while (loop) {			
 			printsBank();
