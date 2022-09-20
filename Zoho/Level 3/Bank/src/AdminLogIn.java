@@ -168,6 +168,7 @@ public class AdminLogIn extends AccountHolderLogIn {
         else System.out.print("\nAccount is not removed.");
 
         user.upSyncAccount(AccountHolderLogIn.accounts);
+        limit--;
     }
 
     void changePassword() 
@@ -177,7 +178,7 @@ public class AdminLogIn extends AccountHolderLogIn {
 
         System.out.print("\nEnter the new password : ");
 
-        AccountHolderLogIn.accounts[id].changePassword(encryptPassword(user.encryptPassword(s.next())));
+        AccountHolderLogIn.accounts[id].changePassword(encryptPassword(s.next()));
         user.upSyncAccount(AccountHolderLogIn.accounts);
     }
 

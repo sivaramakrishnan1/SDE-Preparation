@@ -8,6 +8,7 @@ public class Account {
     private int balance = 0;
     private String EncryptedPwd = null;
 
+    // For account holder
     Account(int Id, int AccountNo, String name, int balance, String EncryptedPwd) {
         this.Id = Id;
         this.AccountNo = AccountNo;
@@ -16,6 +17,9 @@ public class Account {
         this.EncryptedPwd = EncryptedPwd;
     }
 
+    /**
+     * For Admin
+     */
     Account(int Id , String name, String EncryptedPwd)
     {
         this.Id = Id;
