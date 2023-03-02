@@ -1,14 +1,12 @@
-import java.util.TreeSet;
-import java.util.Iterator;
+import java.util.*;
 
 class LargestNumber
 {
-	{
-	int[] num = {3,30,34,5,9};
-		System.out.println(largestNumber(num));
-	}
 	public static void main(String args[])
 	{
+		int[] num = {3,30,34,5,9};
+		LargestNumber ln = new LargestNumber();
+		System.out.println(ln.largestNumber(num));
 		return;
 	}
 	
@@ -16,10 +14,10 @@ class LargestNumber
 	public String largestNumber(int[] nums) {
         String res = "";
 		
-		TreeSet<String> tree = new TreeSet<>((String a, String b) -> a.equals(b));
+		TreeSet<Integer> tree = new TreeSet<>(new compareIt());
 		
 		for(int i : nums)
-			tree.add(i + "");
+			tree.add(i);
 		
 		Iterator des = tree.descendingIterator();
 		
@@ -30,4 +28,13 @@ class LargestNumber
 		
 		return res;
     }
+}
+
+class compareIt implements Comparator<Integer>
+{
+	public int compare(Integer a, Integer b)
+	{
+		
+		return a.toString().charAt(0) - a.toString().charAt(0);
+	}
 }

@@ -12,9 +12,6 @@ import java.sql.SQLException;
 
 public class DataBase {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) throws SQLException{
 		try
 		{
@@ -22,14 +19,14 @@ public class DataBase {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
+			System.out.println("Sothanai : " + e);
 		}
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/task","root","siva");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/aboorvam","root","1234");
 		
 		Statement smt = con.createStatement();
 		
-		ResultSet res_set = smt.executeQuery("INSERT INTO ");
-
+		ResultSet res_set = smt.executeQuery("select * from piravi");
+		// INSERT INTO MARKS(1, "Siva", "Rama")
 		
 		while(res_set.next())
 		{
